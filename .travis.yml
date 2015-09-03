@@ -2,6 +2,6 @@ language: node_js
 before_script:
     - npm install -g gulp
 script:
-    - npm build
+    - gulp
 notifications:
     email: false
