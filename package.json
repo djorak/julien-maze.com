@@ -1,0 +1,22 @@
+{
+  "name": "julien-maze.com",
+  "version": "0.0.1",
+  "description": "Personnal website of Julien Mazé - Web Developer",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djorak/julien-maze.com.git"
+  },
+  "author": "Julien <Djorak> Mazé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djorak/julien-maze.com/issues"
+  },
+  "homepage": "http://www.julien-maze.com",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-bower": "0.0.10"
+  }
+}
