@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 gulp.task('bower', function () {
     return bower()
-        .pipe(gulp.dest('lib/'));
+        .pipe(gulp.dest('bower_components/'));
 });
 
 gulp.task('copy:vendors', ['clean'], function () {
@@ -14,7 +14,6 @@ gulp.task('copy:vendors', ['clean'], function () {
 
 gulp.task('copy:assets', ['clean'], function () {
     var index = gulp.src([
-            'webapp/index.html',
             'webapp/css/**/*',
             'webapp/downloads/**/*',
             'webapp/images/**/*',
