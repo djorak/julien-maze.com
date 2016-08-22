@@ -13,6 +13,9 @@
     "url": "https://github.com/djorak/julien-maze.com/issues"
   },
   "homepage": "http://www.julien-maze.com",
+  "scripts": {
+    "build": "gulp"
+  },
   "dependencies": {},
   "devDependencies": {
     "del": "^2.0.0",
