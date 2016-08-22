@@ -16,10 +16,10 @@ h3 {
 ul {
   margin: 75px 0;
 }
-#main {
+.main {
   font-size: 300%;
 }
-#card {
+.card {
   padding-top: 50px;
   width: 85%;
   margin: 0 auto;

@@ -7,7 +7,7 @@
 html, body {
   overflow: auto;
 }
-#main {
+.main {
   background-color: red;
   font-size: 300%;
 }
