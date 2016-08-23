@@ -13,7 +13,12 @@
   },
   "homepage": "http://www.julien-maze.com",
   "scripts": {
-    "build": "postcss --use autoprefixer --use cssnano --dir dist/css webapp/css/*.css",
+    "build": "./build.sh",
+    "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist/fonts",
+    "prebuild:sass": "npm run -s clean:dist:css",
+    "build:sass": "node-sass webapp/scss/styles.scss dist/css/styles.css",
+    "build:postcss": "postcss --use autoprefixer --use cssnano --dir dist/css webapp/css/*.css",
+    "clean:dist:css": "rm -rf dist/css && mkdir -p dist/css",
     "push-dist": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
@@ -22,6 +27,7 @@
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "cssnano": "^3.7.4",
+    "node-sass": "^3.8.0",
     "postcss-cli": "^2.5.2"
   }
 }

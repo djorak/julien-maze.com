@@ -1,0 +1,13 @@
+// Vendors
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+// Styles
+@media only screen and (min-device-width : 0) and (max-device-width : 599px) {
+    @import 'small-devices';
+}
+
+@media only screen and (min-device-width : 600px) and (max-device-width : 1007px) {
+    @import 'tablet-devices';
+}
+
+@import 'desktop';
