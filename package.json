@@ -13,12 +13,12 @@
   },
   "homepage": "http://www.julien-maze.com",
   "scripts": {
+    "watch:css": "nodemon --ext scss -x 'npm run build:css'",
     "build": "./build.sh",
     "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist/fonts",
-    "prebuild:sass": "npm run -s clean:dist:css",
-    "build:sass": "node-sass webapp/scss/styles.scss dist/css/styles.css",
-    "build:postcss": "postcss --use autoprefixer --use cssnano --dir dist/css webapp/css/*.css",
-    "clean:dist:css": "rm -rf dist/css && mkdir -p dist/css",
+    "prebuild:css": "rm -rf dist/css && mkdir -p dist/css",
+    "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.css",
+    "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.css",
     "push-dist": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
