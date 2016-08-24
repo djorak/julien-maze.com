@@ -1,31 +1,68 @@
 $page-background: darken(#fff, 3%);
 $main-blue: #4f6686;
 
+.main-container,
 body,
-html,
-.main-container {
+html {
     height: 100%;
 }
 
 .main-container {
     position: relative;
     background-color: $page-background;
+    font-size: calc(2.5em + 1vw);
+}
+
+.inner-container {
+    padding: 50px;
+
+    * + * {
+        margin-top: 1.5rem;
+    }
 }
 
 .full-name,
-.job-title {
+.job-title,
+.social-networks__item {
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .full-name {
     color: $main-blue;
-    font-size: 7em;
-    padding: 50px 50px 15px;
 }
 
 .job-title {
     color: darken($main-blue, 20%);
-    font-size: 5em;
-    padding-left: 50px;
-    margin-bottom: 65px;
+}
+
+.social-networks {
+    list-style-type: none;
+    padding-left: 55px;
+}
+
+.social-networks__item {
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+.social-networks__link {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #666666;
+}
+
+.fa {
+    margin-right: 10px;
+}
+
+.fa-twitter {
+    color: #55acee;
+}
+
+.fa-google-plus {
+    color: #dd4b39;
+}
+
+.fa-linkedin {
+    color: #0177b5;
 }
