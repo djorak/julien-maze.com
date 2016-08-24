@@ -16,7 +16,6 @@
     "watch:css": "nodemon --ext scss -x 'npm run build:css'",
     "build": "./build.sh",
     "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist/fonts",
-    "prebuild:css": "rm -rf dist/css && mkdir -p dist/css",
     "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.css",
     "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.css",
     "push-dist": "git subtree push --prefix dist origin gh-pages"

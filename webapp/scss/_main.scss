@@ -1,0 +1,31 @@
+$page-background: darken(#fff, 3%);
+$main-blue: #4f6686;
+
+body,
+html,
+.main-container {
+    height: 100%;
+}
+
+.main-container {
+    position: relative;
+    background-color: $page-background;
+}
+
+.full-name,
+.job-title {
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.full-name {
+    color: $main-blue;
+    font-size: 7em;
+    padding: 50px 50px 15px;
+}
+
+.job-title {
+    color: darken($main-blue, 20%);
+    font-size: 5em;
+    padding-left: 50px;
+    margin-bottom: 65px;
+}
