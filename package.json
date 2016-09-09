@@ -13,7 +13,7 @@
   },
   "homepage": "http://www.julien-maze.com",
   "scripts": {
-    "watch:css": "nodemon --ext scss -x 'npm run build:css'",
+    "watch:css": "nodemon --ext scss -x \"npm run build:css\"",
     "build": "./build.sh",
     "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist/fonts",
     "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.css",
@@ -27,6 +27,7 @@
     "autoprefixer": "^6.4.0",
     "cssnano": "^3.7.4",
     "node-sass": "^3.8.0",
+    "nodemon": "^1.10.2",
     "postcss-cli": "^2.5.2"
   }
 }

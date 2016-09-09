@@ -1,5 +1,14 @@
 $page-background: darken(#fff, 3%);
-$main-blue: #4f6686;
+$primary-blue: #4f6686;
+$twitter-colour: #55acee;
+$google-plus-colour: #dd4b39;
+$linkedin-colour: #0177b5;
+$download-link-background: #1565c0;
+$download-link-colour: #ecf0f1;
+
+html {
+    font-size: calc(2.5em + 1vw);
+}
 
 .main-container,
 body,
@@ -8,61 +17,114 @@ html {
 }
 
 .main-container {
-    position: relative;
     background-color: $page-background;
-    font-size: calc(2.5em + 1vw);
+    position: relative;
 }
 
 .inner-container {
-    padding: 50px;
-
+    padding: 2rem;
+    // lobotomized owl selector
     * + * {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 }
 
 .full-name,
 .job-title,
-.social-networks__item {
+.social-networks__item,
+.download-cv__link {
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .full-name {
-    color: $main-blue;
+    color: $primary-blue;
 }
 
 .job-title {
-    color: darken($main-blue, 20%);
+    color: darken($primary-blue, 20%);
 }
 
 .social-networks {
     list-style-type: none;
-    padding-left: 55px;
+    margin: 3rem 0;
 }
 
 .social-networks__item {
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .social-networks__link {
-    text-decoration: none;
-    font-size: 1.2em;
     color: #666666;
+    display: block;
+    font-size: 1.2em;
+    line-height: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: #eaeaea;
+        outline: none;
+        color: $primary-blue;
+
+        .fa-twitter + .social-networks__text {
+            color: $twitter-colour;
+        }
+
+        .fa-google-plus + .social-networks__text {
+            color: $google-plus-colour;
+        }
+
+        .fa-linkedin + .social-networks__text {
+            color: $linkedin-colour;
+        }
+    }
 }
 
-.fa {
-    margin-right: 10px;
+.social-networks__icon {
+    margin-right: 40px;
 }
 
 .fa-twitter {
-    color: #55acee;
+    color: $twitter-colour;
 }
 
 .fa-google-plus {
-    color: #dd4b39;
+    color: $google-plus-colour;
 }
 
 .fa-linkedin {
-    color: #0177b5;
+    color: $linkedin-colour;
+}
+
+.download-cv {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: $download-link-background;
+    transition: background-color 0.3s;
+}
+
+.download-cv__link {
+    text-align: center;
+    display: block;
+    padding: 0.6rem 0;
+    font-size: 1.1rem;
+    color: $download-link-colour;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: lighten($download-link-background, 10%);
+        color: #fff;
+    }
+}
+
+.download-cv__icon {
+    margin-right: 25px;
 }
