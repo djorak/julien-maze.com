@@ -3,5 +3,5 @@
 echo "-- Building www.julien-maze.com --"
 
 npm i
-npm run -s build:copy:fonts
-npm run -s build:css
+npm run build:copy:fonts
+npm run build:css

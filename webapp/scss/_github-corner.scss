@@ -19,6 +19,11 @@
     &:hover .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
     }
+
+    @include desktop {
+        width: 10%;
+        padding-bottom: 10%;
+    }
 }
 
 @keyframes octocat-wave {

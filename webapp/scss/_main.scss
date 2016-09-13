@@ -1,5 +1,6 @@
 $page-background: darken(#fff, 3%);
 $primary-blue: #4f6686;
+$github-colour: #111111;
 $twitter-colour: #55acee;
 $google-plus-colour: #dd4b39;
 $linkedin-colour: #0177b5;
@@ -7,7 +8,15 @@ $download-link-background: #1565c0;
 $download-link-colour: #ecf0f1;
 
 html {
-    font-size: calc(2.5em + 1vw);
+    font-size: calc(0.8em + 1vw);
+
+    @include desktop {
+        font-size: 15pt;
+    }
+}
+
+body {
+    background-color: $page-background;
 }
 
 .main-container,
@@ -17,7 +26,6 @@ html {
 }
 
 .main-container {
-    background-color: $page-background;
     position: relative;
 }
 
@@ -26,6 +34,11 @@ html {
     // lobotomized owl selector
     * + * {
         margin-top: 1rem;
+    }
+
+    @include desktop {
+        width: 60%;
+        margin: auto;
     }
 }
 
@@ -69,6 +82,10 @@ html {
         outline: none;
         color: $primary-blue;
 
+        .fa-github + .social-networks__text {
+            color: $github-colour;
+        }
+
         .fa-twitter + .social-networks__text {
             color: $twitter-colour;
         }
@@ -84,7 +101,11 @@ html {
 }
 
 .social-networks__icon {
-    margin-right: 40px;
+    margin-right: 20px;
+}
+
+.fa-github {
+    color: $github-colour;
 }
 
 .fa-twitter {
@@ -107,6 +128,11 @@ html {
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
     background-color: $download-link-background;
     transition: background-color 0.3s;
+
+    @include desktop {
+        max-width: 300px;
+        margin: auto;
+    }
 }
 
 .download-cv__link {

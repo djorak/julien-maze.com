@@ -5,3 +5,5 @@ script:
     - npm run build
 notifications:
     email: false
+after_success:
+    - npm run push-dist

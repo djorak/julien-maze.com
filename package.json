@@ -15,9 +15,9 @@
   "scripts": {
     "watch:css": "nodemon --ext scss -x \"npm run build:css\"",
     "build": "./build.sh",
-    "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist/fonts",
-    "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.css",
-    "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.css",
+    "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist",
+    "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.min.css",
+    "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.min.css",
     "push-dist": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
