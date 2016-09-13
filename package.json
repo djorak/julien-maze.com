@@ -2,7 +2,6 @@
   "name": "julien-maze.com",
   "version": "0.0.1",
   "description": "Personnal website of Julien Mazé - Web Developer",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/djorak/julien-maze.com.git"
@@ -14,12 +13,21 @@
   },
   "homepage": "http://www.julien-maze.com",
   "scripts": {
-    "build": "gulp"
+    "watch:css": "nodemon --ext scss -x \"npm run build:css\"",
+    "build": "./build.sh",
+    "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist",
+    "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.min.css",
+    "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.min.css",
+    "push-dist": "git subtree push --prefix dist origin gh-pages"
   },
-  "dependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.6.3"
+  },
   "devDependencies": {
-    "del": "^2.0.0",
-    "gulp": "^3.9.0",
-    "gulp-bower": "0.0.10"
+    "autoprefixer": "^6.4.0",
+    "cssnano": "^3.7.4",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.10.2",
+    "postcss-cli": "^2.5.2"
   }
 }
