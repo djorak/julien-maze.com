@@ -2,8 +2,8 @@ language: node_js
 node_js:
     - "6"
 script:
-    - npm run build
+    - npm run dist
 notifications:
     email: false
 after_success:
-    - test $TRAVIS_PULL_REQUEST = false && git push npm run push-dist
+    - test $TRAVIS_PULL_REQUEST = false && npm run push-dist
