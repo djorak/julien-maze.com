@@ -10,4 +10,4 @@ then
 fi
 
 echo "-> Pushing /dist to Github pages"
-./node_modules/.bin/gh-pages --repo https://$GH_TOKEN@github.com/djorak/julien-maze.com.git
+../node_modules/.bin/gh-pages --repo https://$GH_TOKEN@github.com/djorak/julien-maze.com.git
