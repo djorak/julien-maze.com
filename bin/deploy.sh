@@ -11,5 +11,5 @@ fi
 
 echo "-> Pushing /dist to Github pages"
 ./node_modules/.bin/gh-pages \
-    --dir dist \
+    --dist dist \
     --repo https://$GH_TOKEN@github.com/djorak/julien-maze.com.git
