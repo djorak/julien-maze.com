@@ -14,10 +14,10 @@
   "homepage": "http://www.julien-maze.com",
   "scripts": {
     "watch:css": "nodemon --ext scss -x \"npm run build:css\"",
-    "dist": "./build.sh",
+    "dist": "./bin/build.sh",
     "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.min.css",
     "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.min.css",
-    "push-dist": "gh-pages -d dist"
+    "push-dist": "./bin/deploy.sh"
   },
   "dependencies": {
     "font-awesome": "^4.6.3"
