@@ -5,5 +5,8 @@ script:
     - npm run dist
 notifications:
     email: false
-after_success:
-    - test $TRAVIS_PULL_REQUEST = false && npm run push-dist
+deploy:
+    provider: script
+    script: npm run push-dist
+    on:
+      branch: master
