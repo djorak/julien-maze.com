@@ -2,11 +2,11 @@
 
 echo "-- Building www.julien-maze.com --"
 
-npm i
+yarn install
 rm -rf dist
 mkdir -p dist
 cp -R node_modules/font-awesome/fonts dist
 cp -R webapp/index.html dist
 cp -R webapp/CNAME dist
 cp -R webapp/files dist
-npm run build:css
+yarn build:css

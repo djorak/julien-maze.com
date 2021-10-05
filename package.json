@@ -16,18 +16,17 @@
     "watch:css": "nodemon --ext scss -x \"npm run build:css\"",
     "dist": "./bin/build.sh",
     "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.min.css",
-    "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.min.css",
-    "push-dist": "./bin/deploy.sh"
+    "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.min.css"
   },
   "dependencies": {
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.4.0",
-    "cssnano": "^3.7.4",
-    "gh-pages": "^0.12.0",
-    "node-sass": "^3.8.0",
-    "nodemon": "^1.10.2",
-    "postcss-cli": "^2.5.2"
+    "autoprefixer": "^10.3.7",
+    "cssnano": "^5.0.8",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.13",
+    "postcss": "^8.3.9",
+    "postcss-cli": "^9.0.1"
   }
 }
