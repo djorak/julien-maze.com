@@ -14,10 +14,12 @@
   },
   "homepage": "http://www.julien-maze.com",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack serve --open"
+    "build": "NODE_ENV=production webpack",
+    "start": "NODE_ENV=development webpack serve --open"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "font-awesome": "^4.7.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -26,8 +28,10 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
+    "@emotion/babel-plugin": "^11.3.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
     "babel-loader": "^8.2.2",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "react-refresh": "^0.10.0",
     "webpack": "^5.57.1",

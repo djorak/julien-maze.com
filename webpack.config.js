@@ -32,6 +32,18 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.pdf$/i,
+        include: SRC_FOLDER,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
