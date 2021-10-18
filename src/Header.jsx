@@ -2,12 +2,15 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import * as colours from './colours';
+import * as fonts from './fonts';
 
 const FullName = styled.h1`
+  ${fonts.raleway}
   color: ${colours.primaryBlue};
 `;
 
 const JobTitle = styled.h2`
+  ${fonts.raleway}
   color: ${colours.primaryBlueDark};
 `;
 

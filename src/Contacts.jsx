@@ -1,48 +1,102 @@
+/** @jsx jsx */
 import React from 'react';
+import styled from '@emotion/styled';
+import { jsx, css } from '@emotion/react';
+
+import * as fonts from './fonts';
+import * as colours from './colours';
+
+const ContactList = styled.ul`
+  list-style-type: none;
+  margin: 3rem 0;
+`;
+
+const Contact = styled.li`
+  ${fonts.helveticaNeue}
+  margin: 0;
+`;
+
+const ContactText = styled.span``;
+
+const ContactLink = styled.a`
+  color: #666666;
+  display: block;
+  font-size: 1.2em;
+  line-height: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #eaeaea;
+    outline: none;
+    color: ${colours.primaryBlue};
+
+    .fa-github + ${ContactText} {
+      color: ${colours.githubColour};
+    }
+
+    .fa-twitter + ${ContactText} {
+      color: ${colours.twitterColour};
+    }
+
+    .fa-linkedin + ${ContactText} {
+      color: ${colours.linkedinColour};
+    }
+  }
+`;
+
+const ContactIcon = styled.i`
+  margin-right: 20px;
+  color: {props => props.colour}
+`;
 
 const Contacts = () => (
-  <ul className="social-networks">
-    <li className="social-networks__item">
-      <a
+  <ContactList className="social-networks">
+    <Contact>
+      <ContactLink
         href="mailto:julien@julien-maze.com"
-        className="social-networks__link"
         title="julien@julien-maze.com"
       >
-        <i className="fa fa-fw fa-envelope social-networks__icon"></i>
-        <span className="social-networks__text">Email</span>
-      </a>
-    </li>
-    <li className="social-networks__item">
-      <a
-        href="http://github.com/djorak"
-        title="github.com/djorak"
-        className="social-networks__link"
-      >
-        <i className="fa fa-fw fa-github social-networks__icon"></i>
-        <span className="social-networks__text">Github</span>
-      </a>
-    </li>
-    <li className="social-networks__item">
-      <a
+        <ContactIcon className="fa fa-fw fa-envelope social-networks__icon"></ContactIcon>
+        <ContactText>Email</ContactText>
+      </ContactLink>
+    </Contact>
+    <Contact>
+      <ContactLink href="http://github.com/djorak" title="github.com/djorak">
+        <ContactIcon
+          className="fa fa-fw fa-github"
+          colour={colours.githubColour}
+        ></ContactIcon>
+        <ContactText>Github</ContactText>
+      </ContactLink>
+    </Contact>
+    <Contact>
+      <ContactLink
         href="http://www.twitter.com/djorak"
         title="twitter.com/djorak"
-        className="social-networks__link"
       >
-        <i className="fa fa-fw fa-twitter social-networks__icon"></i>
-        <span className="social-networks__text">Twitter</span>
-      </a>
-    </li>
-    <li className="social-networks__item">
-      <a
+        <ContactIcon
+          className="fa fa-fw fa-twitter"
+          colour={colours.twitterColour}
+        ></ContactIcon>
+        <ContactText>Twitter</ContactText>
+      </ContactLink>
+    </Contact>
+    <Contact>
+      <ContactLink
         href="http://linkedin.com/in/julienmaze"
         title="linkedin.com/in/julienmaze"
-        className="social-networks__link"
       >
-        <i className="fa fa-fw fa-linkedin social-networks__icon"></i>
-        <span className="social-networks__text">LinkedIn</span>
-      </a>
-    </li>
-  </ul>
+        <ContactIcon
+          className="fa fa-fw fa-linkedin"
+          colour={colours.linkedinColour}
+        ></ContactIcon>
+        <ContactText>LinkedIn</ContactText>
+      </ContactLink>
+    </Contact>
+  </ContactList>
 );
 
 export default Contacts;
