@@ -5,4 +5,5 @@ export const githubColour = '#111111';
 export const twitterColour = '#55acee';
 export const linkedinColour = '#0177b5';
 export const downloadLinkBackground = '#1565c0';
+export const downloadLinkBackgroundLight = `#217ee7`;
 export const downloadLinkColour = '#ecf0f1';

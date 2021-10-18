@@ -49,7 +49,7 @@ const ContactLink = styled.a`
 
 const ContactIcon = styled.i`
   margin-right: 20px;
-  color: {props => props.colour}
+  color: ${(props) => props.colour};
 `;
 
 const Contacts = () => (
@@ -59,7 +59,10 @@ const Contacts = () => (
         href="mailto:julien@julien-maze.com"
         title="julien@julien-maze.com"
       >
-        <ContactIcon className="fa fa-fw fa-envelope social-networks__icon"></ContactIcon>
+        <ContactIcon
+          className="fa fa-fw fa-envelope"
+          colour={colours.primaryBlue}
+        ></ContactIcon>
         <ContactText>Email</ContactText>
       </ContactLink>
     </Contact>
