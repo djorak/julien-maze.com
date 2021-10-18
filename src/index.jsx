@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Global, css } from '@emotion/react';
+import fontAwesomeCss from 'font-awesome/css/font-awesome.min.css';
 
 import Page from './Page';
 import * as colours from './colours';
