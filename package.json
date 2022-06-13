@@ -16,7 +16,7 @@
     "scripts": {
         "watch:css": "nodemon --ext scss -x \"npm run build:css\"",
         "dist": "./bin/build.sh",
-        "build:css": "node-sass webapp/scss/styles.scss dist/css/styles.min.css",
+        "build:css": "node-sass src/scss/styles.scss dist/css/styles.min.css",
         "postbuild:css": "postcss --use autoprefixer --use cssnano --replace dist/css/styles.min.css"
     },
     "dependencies": {
