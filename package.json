@@ -1,6 +1,7 @@
 {
   "name": "julien-maze.com",
   "version": "0.0.1",
+  "packageManager": "yarn@3.2.1",
   "description": "Personnal website of Julien Mazé - Web Developer",
   "repository": {
     "type": "git",
@@ -22,11 +23,11 @@
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "cssnano": "^5.0.8",
-    "node-sass": "^6.0.1",
-    "nodemon": "^2.0.13",
-    "postcss": "^8.3.9",
-    "postcss-cli": "^9.0.1"
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.11",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0"
   }
 }
