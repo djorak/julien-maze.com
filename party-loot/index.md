@@ -1,9 +1,7 @@
 ---
 title: Party's hoard
-description: ""
+description: " "
 ---
-
-# Group loot
 
 ## In our possession
 
