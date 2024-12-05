@@ -1,8 +1,10 @@
-$page-background: darken(#fff, 3%);
+@use "sass:color";
+@use "mixins" as mq;
+
+$page-background: color.adjust(#fff, $lightness: -3%);
 $primary-blue: #4f6686;
 $github-colour: #111111;
-$twitter-colour: #55acee;
-$google-plus-colour: #dd4b39;
+$bluesky-colour: #0085ff;
 $linkedin-colour: #0177b5;
 $download-link-background: #1565c0;
 $download-link-colour: #ecf0f1;
@@ -10,7 +12,7 @@ $download-link-colour: #ecf0f1;
 html {
     font-size: calc(0.8em + 1vw);
 
-    @include desktop {
+    @include mq.desktop {
         font-size: 15pt;
     }
 }
@@ -36,7 +38,7 @@ html {
         margin-top: 1rem;
     }
 
-    @include desktop {
+    @include mq.desktop {
         width: 60%;
         margin: auto;
     }
@@ -44,9 +46,11 @@ html {
 
 .full-name,
 .job-title,
+.get-in-contact-title,
 .social-networks__item,
 .download-cv__link {
-    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
 }
 
 .full-name {
@@ -54,12 +58,28 @@ html {
 }
 
 .job-title {
-    color: darken($primary-blue, 20%);
+    color: color.adjust($primary-blue, $lightness: -20%);
+}
+
+.intro-text {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+.get-in-contact-title {
+    margin-top: 3rem;
 }
 
 .social-networks {
     list-style-type: none;
-    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+
+    @include mq.desktop {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 2em;
+    }
 }
 
 .social-networks__item {
@@ -86,12 +106,8 @@ html {
             color: $github-colour;
         }
 
-        .fa-twitter + .social-networks__text {
-            color: $twitter-colour;
-        }
-
-        .fa-google-plus + .social-networks__text {
-            color: $google-plus-colour;
+        .fa-bluesky + .social-networks__text {
+            color: $bluesky-colour;
         }
 
         .fa-linkedin + .social-networks__text {
@@ -102,18 +118,15 @@ html {
 
 .social-networks__icon {
     margin-right: 20px;
+    width: 20px;
 }
 
 .fa-github {
     color: $github-colour;
 }
 
-.fa-twitter {
-    color: $twitter-colour;
-}
-
-.fa-google-plus {
-    color: $google-plus-colour;
+.fa-bluesky {
+    color: $bluesky-colour;
 }
 
 .fa-linkedin {
@@ -125,13 +138,12 @@ html {
     display: block;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     background-color: $download-link-background;
     transition: background-color 0.3s;
 
-    @include desktop {
+    @include mq.desktop {
         max-width: 300px;
-        margin: auto;
     }
 }
 
@@ -146,7 +158,10 @@ html {
     &:hover,
     &:focus,
     &:active {
-        background-color: lighten($download-link-background, 10%);
+        background-color: color.adjust(
+            $download-link-background,
+            $lightness: 10%
+        );
         color: #fff;
     }
 }
